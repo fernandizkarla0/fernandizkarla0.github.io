@@ -20,7 +20,7 @@
         header { background: white; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--accent-green); }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; padding: 1.2rem 2rem; }
         nav { display: flex; gap: 2rem; }
-        nav a { text-decoration: none; color: var(--dark-slate); font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: color 0.2s; }
+        nav a { text-decoration: none; color: var(--dark-slate); font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: color 0.2s; padding: 0.5rem; }
         nav a:hover, nav a.active { color: var(--accent-green); }
 
         /* General Layout Blocks */
@@ -82,6 +82,7 @@
 
         /* Responsiveness Configuration Maps */
         @media (max-width: 768px) {
+            .nav-container { padding: 1rem; }
             nav { gap: 1rem; }
             nav a { font-size: 1rem; }
             .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -109,7 +110,6 @@
     <section id="home" class="page-section active">
         <!-- Blue Banner Area -->
         <div class="hero">
-            <!-- Center Vertical Logo Placement -->
             <div class="logo-wrapper">
                 <img src="logo.png" alt="Helic Consultancy Logo">
             </div>
@@ -141,3 +141,5 @@
         <div class="metrics-bar">
             <div class="metric-item"><h3>2+</h3><p>Years of Experience</p></div>
             <div class="metric-item"><h3>50+</h3><p>Projects Completed</p></div>
+
+            700+Placements Done400+Students TrainedValues & PurposeExpertiseOur team of experienced recruiters and software professionals are committed to active tracking parameters within the latest trends.EmpathyWe recognize that candidate pipelines have distinct parameters, prompting completely customized strategic blueprints.PartnershipOur commitment extends beyond transactions, fostering long-term connections that drive long-term structural ecosystem growth.IntegrityDeep commitment to absolute ethical conduct, reinforcing trust and structural security layout patterns transparently.Our Personalized Approach to InnovationWe work tirelessly to synthesize individual objectives with hiring corporate frameworks. Through active technology pipelines like Javascript, Python, Data Science, and Cyber Security, we structurally position candidates to exceed competition criteria.Professional Resume Optimization: We strategically reconstruct CV profiles and linked networks to lock down employer interest channels immediately.Training Courses & ProgramsAll certification and deployment tracks scale across an intensive format designed to bridge operational gaps.Software TestingManual Testing (QA) CourseDuration: 6-8 MonthsAutomation Testing CourseDuration: 6-8 MonthsWeb Development.NET Core Full Stack CourseDuration: 6-8 MonthsJava Full Stack CourseDuration: 6-8 MonthsPython Web CourseDuration: 6-8 MonthsAngular / React JS CourseDuration: 6-8 MonthsMERN & MEAN Stack MasteryDuration: 6-8 MonthsMobile & LeadershipAndroid, iOS & Flutter AppsDuration: 6-8 MonthsBusiness Analyst CertificationDuration: 6-8 MonthsScrum Master & Project ManagerDuration: 6-8 MonthsProduct Management TrackDuration: 6-8 MonthsHealthcare MasteryMedical Billing & CodingDuration: 6-8 MonthsClinical Research: FastrackDuration: 6-8 MonthsMedical Assistant ProtocolsDuration: 6-8 MonthsHealth Data AnalyticsDuration: 6-8 MonthsSupporting Services30+ Resume & CV Template FrameworksLinkedIn Profile Optimization & BuildersInternational Format ResumesStaffing & RecruitmentUSA IT Staffing PipelineCanada IT Staffing PipelineTalent Acquisition SolutionsConnect With Our TeamCandidate/Company NameEmail AddressInquiry Profile DetailsSubmit Connection RequestCorporate HeadquartersDirect Email: info@helic-co.netCorporate Phone: 505-585-4953Hours of Operation:Monday to Friday8:00 AM - 6:00 PM© 2026 Helic Consultancy. All Rights Reserved. Managed via Cloudflare Edge Network Infrastructure.function navigateTo(sectionId) {// Hide all pagesconst layers = document.querySelectorAll('.page-section');layers.forEach(layer => layer.classList.remove('active'));// Deactivate old nav tabsconst bars = document.querySelectorAll('nav a');bars.forEach(bar => bar.classList.remove('active'));// Show the page we clickeddocument.getElementById(sectionId).classList.add('active');document.getElementById('nav-' + sectionId).classList.add('active');// Scroll right to the top of the viewwindow.scrollTo({ top: 0, behavior: 'smooth' });}
