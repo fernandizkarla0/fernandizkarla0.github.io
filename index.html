@@ -1,127 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Helic Consultancy</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Segoe UI,Arial,sans-serif;color:#1f2937;background:#fff}
-header{background:linear-gradient(135deg,#0B1E6D,#1d4ed8);color:#fff;padding:90px 20px;text-align:center}
-nav{position:sticky;top:0;background:#08164f;padding:15px;z-index:100}
-nav ul{display:flex;justify-content:center;gap:25px;list-style:none}
-nav a{color:#fff;text-decoration:none;font-weight:600}
-.container{max-width:1200px;margin:auto;padding:60px 20px}
-h2{color:#0B1E6D;margin-bottom:20px}
-.hero h1{font-size:3rem;margin-bottom:15px}
-.btn{display:inline-block;background:#22C55E;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;margin:8px}
-.stats,.grid{display:grid;gap:20px}
-.stats{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:40px}
-.stat,.card{background:#fff;border-radius:12px;padding:25px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
-.stat{text-align:center;border-top:5px solid #22C55E}
-.grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.section-alt{background:#f7f9fc}
-footer{background:#0B1E6D;color:#fff;padding:30px;text-align:center}
-.contact-box{background:#eef5ff;padding:25px;border-radius:12px}
-ul{padding-left:20px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helic Consultancy | Bootcamps, IT Training & Placements</title>
+    <style>
+        /* Helic Consultancy Unified CSS Grid Framework */
+        :root {
+            --primary-blue: #1e3a8a;
+            --accent-green: #10b981;
+            --dark-slate: #0f172a;
+            --light-bg: #f8fafc;
+            --muted-text: #64748b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background: white; color: var(--dark-slate); line-height: 1.6; }
+        
+        /* Fixed Header Navigation Bar */
+        header { background: white; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; border-bottom: 3px solid var(--accent-green); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; padding: 1.2rem 2rem; }
+        nav { display: flex; gap: 2rem; }
+        nav a { text-decoration: none; color: var(--dark-slate); font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: color 0.2s; }
+        nav a:hover, nav a.active { color: var(--accent-green); }
+
+        /* General Layout Blocks */
+        .page-section { display: none; padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; min-height: 75vh; }
+        .page-section.active { display: block; animation: sectionFade 0.4s ease-out; }
+        h2 { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 1.5rem; position: relative; padding-bottom: 0.5rem; font-weight: 800; }
+        h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 60px; height: 4px; background: var(--accent-green); border-radius: 2px; }
+        @keyframes sectionFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Centered Logo and Hero Layout Blocks */
+        .hero { text-align: center; padding: 5rem 2rem; background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%); color: white; border-radius: 16px; margin-bottom: 4rem; box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.3); }
+        .logo-wrapper { display: flex; justify-content: center; align-items: center; margin-bottom: 2.5rem; width: 100%; }
+        .logo-wrapper img { height: 130px; width: auto; display: block; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); background: white; padding: 4px; }
+        .hero h1 { font-size: 3.5rem; color: white; line-height: 1.2; margin-bottom: 1.5rem; font-weight: 900; letter-spacing: -0.5px; }
+        .hero p { font-size: 1.25rem; color: #cbd5e1; max-width: 850px; margin: 0 auto 2.5rem auto; }
+        
+        /* Buttons */
+        .btn { display: inline-block; background: var(--accent-green); color: white; padding: 0.9rem 2.2rem; border-radius: 6px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; transition: all 0.2s; margin: 0 0.5rem; }
+        .btn:hover { background: #059669; transform: translateY(-1px); }
+        .btn-blue { background: #2563eb; }
+        .btn-blue:hover { background: #1d4ed8; }
+        
+        /* Highlight Service Buckets */
+        .services-overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .service-mini-card { background: var(--light-bg); padding: 2.5rem 2rem; border-radius: 12px; border-top: 4px solid var(--primary-blue); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .service-mini-card h3 { color: var(--primary-blue); margin-bottom: 1rem; font-size: 1.4rem; font-weight: 700; }
+
+        /* Metric Counters */
+        .metrics-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; background: var(--primary-blue); color: white; padding: 3rem 2rem; border-radius: 12px; text-align: center; margin-top: 4rem; }
+        .metric-item h3 { font-size: 3rem; color: var(--accent-green); margin-bottom: 0.5rem; font-weight: 800; }
+        .metric-item p { font-size: 1rem; font-weight: 600; opacity: 0.9; }
+
+        /* About & Values Layouts */
+        .about-block { margin-bottom: 3.5rem; background: var(--light-bg); padding: 2.5rem; border-radius: 12px; border-left: 5px solid var(--accent-green); }
+        .about-block h3 { color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 1rem; font-weight: 700; }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .value-card { border: 1px solid #e2e8f0; padding: 2rem; border-radius: 8px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .value-card h4 { color: var(--accent-green); font-size: 1.3rem; margin-bottom: 0.5rem; font-weight: 700; }
+
+        /* Course Catalog Section */
+        .catalog-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .category-box { background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
+        .category-box h3 { background: var(--primary-blue); color: white; padding: 0.6rem 1rem; border-radius: 6px; font-size: 1.1rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+        .course-list { list-style: none; }
+        .course-item { padding: 1rem 0; border-bottom: 1px dashed #e2e8f0; }
+        .course-item:last-child { border-bottom: none; }
+        .course-title { font-weight: 700; color: var(--dark-slate); font-size: 1.05rem; display: block; margin-bottom: 0.2rem; }
+        .course-duration { display: inline-block; background: #e0f2fe; color: #0369a1; font-size: 0.75rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; margin-bottom: 0.4rem; }
+
+        /* Contact Section */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+        .form-row { margin-bottom: 1.5rem; }
+        .form-row label { display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--dark-slate); }
+        .form-row input, .form-row textarea { width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 1rem; }
+        .info-panel { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 2.5rem; border-radius: 12px; }
+        .info-panel h3 { color: var(--primary-blue); margin-bottom: 1.5rem; font-size: 1.6rem; font-weight: 700; }
+        .info-line { margin-bottom: 1.2rem; font-size: 1.05rem; }
+        .info-line strong { color: var(--primary-blue); }
+
+        /* Responsiveness Configuration Maps */
+        @media (max-width: 768px) {
+            nav { gap: 1rem; }
+            nav a { font-size: 1rem; }
+            .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .hero h1 { font-size: 2.3rem; }
+        }
+        footer { background: var(--dark-slate); color: white; text-align: center; padding: 2.5rem 2rem; margin-top: 5rem; font-size: 0.95rem; border-top: 4px solid var(--accent-green); }
+        footer p { color: #94a3b8; }
+    </style>
 </head>
 <body>
-<div style="max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; align-items: center;">
-    <a href="#home" style="cursor: pointer;">
-        <img src="logo.png" alt="Helic Consultancy Logo" style="height: 140 px; width: auto; display: block;">
-    </a>
-</div>
 
-<nav>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+    <!-- Fixed Header Top Navigation Bar -->
+    <header>
+        <div class="nav-container">
+            <nav>
+                <a id="nav-home" onclick="navigateTo('home')" class="active">Home</a>
+                <a id="nav-about" onclick="navigateTo('about')">About Us</a>
+                <a id="nav-services" onclick="navigateTo('services')">Services & Catalog</a>
+                <a id="nav-contact" onclick="navigateTo('contact')">Contact Us</a>
+            </nav>
+        </div>
+    </header>
 
-<header id="home" class="hero">
-<h1>HELIC CONSULTANCY</h1>
-<p>Empowering Careers Through Training & Placement Excellence</p>
-<p style="margin-top:15px;">Upgrade your skills, build a stronger resume, and connect with top employers through industry-focused training and staffing solutions.</p>
-<a href="#services" class="btn">Explore Courses</a>
-<a href="#contact" class="btn">Contact Us</a>
-</header>
+    <!-- SECTION 1: HOME PAGE -->
+    <section id="home" class="page-section active">
+        <!-- Blue Banner Area -->
+        <div class="hero">
+            <!-- Center Vertical Logo Placement -->
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="Helic Consultancy Logo">
+            </div>
 
-<div class="container">
-<h2>Our Goal Is To Attain Your Expectations</h2>
-<p>With Helic Consultancy, you get to experience a unique journey that starts with learning and upgrading your skills through staffing solutions, resume building, professional training, and placement support that helps you land opportunities with leading companies.</p>
+            <h1>HELIC CONSULTANCY</h1>
+            <p>Our Goal is to Attain Your Expectations. Experience a unique journey starting with skill enhancement and ending with your placement at your dream company. We provide strategic IT training matching current market trends to ensure you stand out as the ideal recruiter candidate.</p>
+            <button class="btn btn-blue" onclick="navigateTo('services')">Explore Courses</button>
+            <button class="btn" onclick="navigateTo('contact')">Contact Us</button>
+        </div>
 
-<div class="stats">
-<div class="stat"><h3>2+</h3><p>Years Experience</p></div>
-<div class="stat"><h3>50+</h3><p>Projects Completed</p></div>
-<div class="stat"><h3>700+</h3><p>Placements Done</p></div>
-<div class="stat"><h3>400+</h3><p>Students Trained</p></div>
-</div>
-</div>
+        <h2>Our Core Specialized Services</h2>
+        <p style="color: var(--muted-text); margin-bottom: 2rem;">Providing your operational frameworks with cutting-edge technologies to open high-end career opportunities.</p>
+        
+        <div class="services-overview">
+            <div class="service-mini-card">
+                <h3>Staffing Solutions</h3>
+                <p style="color: var(--muted-text);">Comprehensive profile analyses executed by our recruitment specialists to secure the perfect alignment for your tracking needs.</p>
+            </div>
+            <div class="service-mini-card">
+                <h3>IT Trainings</h3>
+                <p style="color: var(--muted-text);">Advanced programmatic frameworks delivering deep functional infrastructure instruction across trending enterprise software modules.</p>
+            </div>
+            <div class="service-mini-card">
+                <h3>Quality Assurance</h3>
+                <p style="color: var(--muted-text);">Deep, comprehensive testing layers designed to guarantee structural excellence and high-grade output validation.</p>
+            </div>
+        </div>
 
-<section class="section-alt">
-<div class="container" id="about">
-<h2>About Us</h2>
-<div class="grid">
-<div class="card"><h3>Expertise</h3><p>Industry professionals and recruiters delivering practical guidance and market insights.</p></div>
-<div class="card"><h3>Empathy</h3><p>Personalized support tailored to each candidate and organization.</p></div>
-<div class="card"><h3>Partnership</h3><p>Building long-term relationships that drive mutual success.</p></div>
-<div class="card"><h3>Integrity</h3><p>Ethical, transparent, and trustworthy business practices.</p></div>
-<div class="card"><h3>Innovation</h3><p>Modern approaches to training, recruitment, and career growth.</p></div>
-<div class="card"><h3>Growth</h3><p>Helping professionals and businesses achieve their aspirations.</p></div>
-</div>
-</div>
-</section>
-
-<div class="container" id="services">
-<h2>Training & Services</h2>
-<div class="grid">
-<div class="card">
-<h3>Software Testing Techniques</h3>
-<ul><li>Manual Testing (QA)</li><li>Automation Testing</li></ul>
-</div>
-<div class="card">
-<h3>Web Development</h3>
-<ul><li>.NET Core Full Stack</li><li>Java Full Stack</li><li>Python Web</li><li>Angular</li><li>React JS</li><li>MERN Stack</li><li>MEAN Stack</li></ul>
-</div>
-<div class="card">
-<h3>Mobile Development</h3>
-<ul><li>Android Development</li><li>Flutter</li><li>iOS Development</li></ul>
-</div>
-<div class="card">
-<h3>Business Leadership</h3>
-<ul><li>Business Analyst</li><li>Project Manager</li><li>Scrum Master</li><li>Product Management</li></ul>
-</div>
-<div class="card">
-<h3>Healthcare Mastery</h3>
-<ul><li>Medical Billing & Coding</li><li>Clinical Research</li><li>Medical Assistant</li><li>Health Data Analytics</li></ul>
-</div>
-<div class="card">
-<h3>Staffing & Recruitment</h3>
-<ul><li>USA IT Staffing</li><li>Canada IT Staffing</li><li>Talent Acquisition</li><li>Resume Building</li><li>LinkedIn Optimization</li></ul>
-</div>
-</div>
-</div>
-
-<section class="section-alt">
-<div class="container" id="contact">
-<h2>Contact Us</h2>
-<div class="contact-box">
-<p><strong>Email:</strong> info@helic-co.net</p>
-<p><strong>Phone:</strong> 505-585-4953</p>
-<p><strong>Business Hours:</strong> Monday – Friday | 8:00 AM – 6:00 PM</p>
-<br>
-<p>Ready to take the next step in your career? Reach out to our team today.</p>
-</div>
-</div>
-</section>
-
-<footer>
-<p>© 2026 Helic Consultancy. All Rights Reserved.</p>
-</footer>
-
-</body>
-</html>
+        <div class="metrics-bar">
+            <div class="metric-item"><h3>2+</h3><p>Years of Experience</p></div>
+            <div class="metric-item"><h3>50+</h3><p>Projects Completed</p></div>
